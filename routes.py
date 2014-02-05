@@ -1,4 +1,6 @@
 from flask import Flask, render_template, jsonify, request
+from random import randint
+import os
 
 app = Flask(__name__)
 
@@ -10,15 +12,11 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a',0,type=int)
-    b = request.args.get('b',0,type=int)
-    return jsonify(result=a+b)
-
-@app.route('/test')
-def test():
-    return render_template('testenv.html')
+@app.route('/_new_video')
+def new_video():
+    videos =[video for video in  os.listdir('static/webm/') if
+            video[-5:]=='.webm']
+    return jsonify(stream=videos[randint(0,len(videos)-1)])
 
 if __name__ == '__main__':
     app.run(debug=True)
