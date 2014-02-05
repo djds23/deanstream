@@ -2,8 +2,9 @@ This is the deanstream.
 
 Come here to watch Dean sleep, or wake him up!
 
-You need to fix the wake up function. 
+Dean still has to add a .gitignore. Badly.
 
-also make it look prettier.
+Dean also needs to delete the jquery.js file
 
-hey dean, you are in the middle of doing the flask ajax tut. finish is.
+Dean ALSO needs to delete the test webms and put the real files in it.
+
