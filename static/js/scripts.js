@@ -8,5 +8,7 @@ $(document).ready(function(){
 })
 
 $('a#new_video').bind('click', function() {
-  $.getJSON($SCRIPT_ROOT + '/_new_video'
+  $.getJSON($SCRIPT_ROOT + '/_new_video', {
+    $ 
+  }
 }

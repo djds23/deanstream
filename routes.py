@@ -12,9 +12,12 @@ def home():
 def about():
     return render_template('about.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 @app.route('/_new_video')
 def new_video():
-    videos =[video for video in  os.listdir('static/webm/') if
+    videos =["url_for('static', filename='webm/"+video+"')" for video in  os.listdir('static/webm/') if
             video[-5:]=='.webm']
     return jsonify(stream=videos[randint(0,len(videos)-1)])
 

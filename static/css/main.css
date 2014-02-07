@@ -7,7 +7,9 @@
 .navbar a {
     color: #fff;
 }
-
+.navbar ul li {
+    margin: auto;
+}
 .navbar ul li a:hover{
     background-color: #abe5ff;
     color: #50788a;
@@ -42,4 +44,8 @@ body {
 .logo-img {
     width: 60%;
     height: 60%;
+ }
+#nav_logo_deanstream {
+    height: 30px;
+    margin-top: -14px;
 }
