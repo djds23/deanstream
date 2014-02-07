@@ -19,7 +19,7 @@ def contact():
 def new_video():
     videos =["url_for('static', filename='webm/"+video+"')" for video in  os.listdir('static/webm/') if
             video[-5:]=='.webm']
-    return jsonify(stream=videos[randint(0,len(videos)-1)])
+    return jsonify(stream=videos[randint(0,1)])
 
 if __name__ == '__main__':
     app.run(debug=True)

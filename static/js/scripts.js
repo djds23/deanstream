@@ -1,14 +1,8 @@
-$(document).ready(function(){
-    $('div.watch-dean').mouseenter(function() {
-        $(this).fadeOut('fast', 1);
-    });
-    $('div.watch-dean').mouseleave(function() {
-        $(this).fadeIn(1,'fast',0.25);
-    });
-})
-
 $('a#new_video').bind('click', function() {
-  $.getJSON($SCRIPT_ROOT + '/_new_video', {
-    $ 
-  }
-}
+  var a_button = $("a#new_video");
+  var video_source = $("video").attr("src");
+  var video = $("video");
+  $.getJSON($SCRIPT_ROOT + '/_new_video',function(data) {
+    $video.removeAttr("src")
+    $video.attr("src",data.stream)
+});
