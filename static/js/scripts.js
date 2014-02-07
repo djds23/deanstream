@@ -4,3 +4,4 @@ $('a#new_video').bind('click', function() {
     $video.removeAttr("src")
     $video.attr("src",data.stream)
 });
+});
