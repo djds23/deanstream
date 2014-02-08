@@ -18,7 +18,7 @@ def contact():
 
 @app.route('/_new_video')
 def new_video():
-    videos =["url_for('static', filename='webm/"+video+"')" for video in  os.listdir('static/webm/') if
+    videos =[video for video in  os.listdir('static/webm/') if
             video[-5:]=='.webm']
     return jsonify(stream=videos[randint(0,1)])
 
