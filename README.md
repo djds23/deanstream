@@ -14,4 +14,7 @@ the same link that the web page already has, instead I am going to just
 pass json with all videos in the folder and use javascript to choose one
 that is not already on the page...
 
+DEAN LOOK AT THE INDEX.HTML FROM THE FLASK TUTORIAL ON JQUERY, you are
+in the middle of modifying your scripts.js to be more like theirs.
+
 duh...

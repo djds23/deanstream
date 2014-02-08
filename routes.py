@@ -15,6 +15,7 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
 @app.route('/_new_video')
 def new_video():
     videos =["url_for('static', filename='webm/"+video+"')" for video in  os.listdir('static/webm/') if
