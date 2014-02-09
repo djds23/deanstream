@@ -49,3 +49,8 @@ body {
     height: 30px;
     margin-top: -14px;
 }
+
+video {
+    height:360px;
+    width: 640px;
+}
