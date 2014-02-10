@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from random import randint
+import random
 import os
 
 app = Flask(__name__)
@@ -18,9 +18,10 @@ def contact():
 
 @app.route('/_new_video')
 def new_video():
+    current_video = request.args.get('current_video')
     videos =[video for video in  os.listdir('static/webm/') if
-            video[-5:]=='.webm']
-    return jsonify(stream=videos[randint(0,1)])
+            video[-5:]=='.webm' and video not in current_video]
+    return jsonify(stream=random.choice(videos))
 
 if __name__ == '__main__':
     app.run(debug=True)

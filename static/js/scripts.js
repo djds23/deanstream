@@ -1,6 +1,7 @@
 $(function() {
   var video = function(e) {
     $.getJSON($SCRIPT_ROOT +'/_new_video', {
+      current_video: $('video').attr('src')
     }, function(data) {
       var full_path = $SCRIPT_ROOT+"static/webm/"+ data.stream
       $('video').removeAttr('src');
