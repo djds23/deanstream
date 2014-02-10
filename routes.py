@@ -24,4 +24,4 @@ def new_video():
     return jsonify(stream=random.choice(videos))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
