@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    agent = request.headers.get('User-Agent')
+    if ('iphone' or 'android' or 'blackberry') in agent.lower():
+        return render_template('sorry.html')
     return render_template('index.html')
 
 @app.route('/about')
