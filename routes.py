@@ -3,11 +3,10 @@ import random
 import os
 
 app = Flask(__name__)
-app.config['SERVER_NAME'] = '127.0.0.1:8000'
 
 @app.route('/')
 def home(altimg=None):
-    agent = r:quest.headers.get('User-Agent')
+    agent = request.headers.get('User-Agent')
     if ('iphone' or 'android' or 'blackberry') in agent.lower():
          return render_template('index.html', altimg='static/img/mobile.jpg')
     return render_template('index.html')
