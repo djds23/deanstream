@@ -1,4 +1,4 @@
-This is the deanstream.
+This is the deanstream. It does not work on mobile. sorry guys. working on it.
 
 Come here to watch Dean sleep, or wake him up!
 
