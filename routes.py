@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def home(altimg=None):
     agent = request.headers.get('User-Agent')
-    if ('iphone' or 'android' or 'blackberry') in agent.lower():
+    mobile = ['iphone', 'android', 'blackberry', 'ipad']
+    if agent.lower() in mobile:
          return render_template('index.html', altimg='static/img/mobile.jpg')
     return render_template('index.html')
 
@@ -27,4 +28,4 @@ def new_video():
     return jsonify(stream=random.choice(videos))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
