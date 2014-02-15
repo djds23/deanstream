@@ -1,8 +1,11 @@
 from flask import Flask, render_template, jsonify, request
+from flask.ext.sqlalchemy import SQLAlchemy
 import random
 import os
 
 app = Flask(__name__)
+app.config.from_object('config')
+db = SQLAlchemy(app)
 
 @app.route('/')
 def home(altimg=None):

@@ -1,3 +1,13 @@
+this branch will replace the master eventually!
+
+Now with 0.1 less SQLALCHEMY! here comes the database mess! make sure
+to use sqlalchemy 0.7.10! there is an error with .8!
+
+the db.commit is not working.
+
+we are trying to add the videos here:
+http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database/page/0
+
 This is the deanstream. It does not work on mobile. sorry guys. working on it.
 
 broke jquery, added mp4 videos.
