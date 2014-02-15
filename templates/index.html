@@ -7,8 +7,7 @@
             <div>
               <img class="logo-img" src="{{ url_for('static', filename='img/deanstream.png') }}"/>
           <div>
-            <video src="{{ url_for('static', filename='webm/couch.webm') }}"autoplay loop >
-            <source id="another" src="{{ url_for('static', filename='webm/couch.webm') }}" type="video/webm" >
+            <video src="{{ url_for('static', filename='webm/couch.webm') }}" autoplay loop poster="{{ url_for('static', filename='img/mobile.jpg') }}">
             <source src="{{ url_for('static', filename='img/mobile.jpg') }}" type="image/jpg" >
             </video>
           <br/>
