@@ -23,8 +23,6 @@ def contact():
 @app.route('/_new_video')
 def new_video():
     current_video = request.args.get('current_video')
-    print type(current_video)
-    print current_video
     videos =[video for video in  os.listdir('static/webm/') if
             video[-5:]=='.webm' and video not in current_video]
     return jsonify(stream=random.choice(videos))
