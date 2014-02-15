@@ -1,5 +1,9 @@
 This is the deanstream. It does not work on mobile. sorry guys. working on it.
 
+broke jquery, added mp4 videos.
+
+this is not ready for master branch yet.
+
 CHANGE THE VIDEO ELEMENT TO USE SOURCE TAGS!
 
 check the w3 schools for def on how!
