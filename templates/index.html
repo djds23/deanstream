@@ -5,9 +5,12 @@
 
         <div class="starter-template">
             <div>
-          <img class="logo-img" src="../static/img/deanstream.png"/>
+              <img class="logo-img" src="{{ url_for('static', filename='img/deanstream.png') }}"/>
           <div>
-            <video id="another" src="{{ url_for('static', filename='webm/couch.webm') }}" autoplay loop src="{{ url_for('static', filename='img/altimg.jpg') }}">video goes here</video>
+            <video src="{{ url_for('static', filename='webm/couch.webm') }}"autoplay loop >
+            <source id="another" src="{{ url_for('static', filename='webm/couch.webm') }}" type="video/webm" >
+            <source src="{{ url_for('static', filename='img/mobile.jpg') }}" type="image/jpg" >
+            </video>
           <br/>
           <a href='#another' id="new_video"><div class="watch-dean"><p class="watch-dean-text">ANOTHER!</p></div></a>
     </div>
