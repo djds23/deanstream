@@ -7,8 +7,7 @@
             <div>
           <img class="logo-img" src="../static/img/deanstream.png"/>
           <div>
-            {% if not altimg %} <video id="another" src="{{ url_for('static', filename='webm/couch.webm') }}" autoplay loop>video goes here</video>
-            {% elif altimg %}  <img src"{{ url_for('static', filename='img/{{ altimg }}') }}"/>{% endif %} 
+            <video id="another" src="{{ url_for('static', filename='webm/couch.webm') }}" autoplay loop src="{{ url_for('static', filename='img/altimg.jpg') }}">video goes here</video>
           <br/>
           <a href='#another' id="new_video"><div class="watch-dean"><p class="watch-dean-text">ANOTHER!</p></div></a>
     </div>
