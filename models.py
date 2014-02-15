@@ -1,4 +1,6 @@
-from routes import db
+from routes import app, config
+from flask.ext.sqlalchemy import SQLAlchemy
+db = SQLAlchemy(app)
 
 class Video(db.Model):
     id = db.Column(db.Integer, primary_key = True)

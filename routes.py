@@ -2,9 +2,10 @@ from flask import Flask, render_template, jsonify, request
 from flask.ext.sqlalchemy import SQLAlchemy
 import random
 import os
+import models
 
 app = Flask(__name__)
-app.config.from_object('config')
+config = app.config.from_object('config')
 db = SQLAlchemy(app)
 
 @app.route('/')
