@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+{% block video %}
+            <video poster="{{ url_for('static', filename='img/mobile.jpg') }}" autoplay="" loop="">
+            <source type='video/mp4' src="{{ url_for('static', filename='{{mp4}}') }}">
+            <source type='video/webm' src="{{ url_for('static', filename='{{webm}}') }}">
+            </video>
+{% endblock %}

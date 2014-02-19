@@ -7,5 +7,11 @@ class Video(db.Model):
     mp4path = db.Column(db.String(500), index = True)
     webmpath = db.Column(db.String(500), index = True)
 
+    def get_mp4(self):
+        return unicode(self.mp4path)
+
+    def get_webm(self):
+        return unicode(self.webmpath)
+
     def __repr__(self):
-        return '<Video {0}>'.format(self.webmpath)
+        return '<Video {0},{1}>'.format(self.mp4path, self.webmpath)
