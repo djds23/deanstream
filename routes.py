@@ -7,17 +7,6 @@ import models
 app = Flask(__name__)
 config = app.config.from_object('config')
 
-def format_data(db_size,result):
-    '''input a number of units,a database and a list, and return the format with paths'''
-    if db_size == 0:
-        return result
-    else:
-        result.append([
-                 models.Video.query.get(db_size).get_webm(),
-                models.Video.query.get(db_size).get_mp4()
-        ])
-        format_data(db_size-1,result)
-
 @app.route('/')
 def home():
     '''creates the dict with the filepaths, and returns the template'''
@@ -37,10 +26,10 @@ def contact():
 @app.route('/_new_video')
 def new_video():
     #current_video = request.args.get('current_video')
-    db_size = len(models.Video.query.all())
-    videos = format_data(db_size,[])
-    supply = random.choice(videos)
-    return render_template('video.html',webm=suppy[0],mp4=supply[1])
+    asset = models.Video.query.order_by('?').limit(1)
+    webm = models.Video.query.first().get_webm()
+    mp4 = models.Video.query.first().get_mp4()
+    return render_template('video.html' ,webm=webm,mp4=mp4)
 
 if __name__ == '__main__':
     app.run(debug=True)
