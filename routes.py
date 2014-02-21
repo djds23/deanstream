@@ -25,11 +25,11 @@ def contact():
 
 @app.route('/_new_video')
 def new_video():
-    #current_video = request.args.get('current_video')
+    current_video = request.args.get('current_video')
     asset = models.Video.query.order_by('?').limit(1)
-    webm = models.Video.query.first().get_webm()
-    mp4 = models.Video.query.first().get_mp4()
-    return render_template('video.html' ,webm=webm,mp4=mp4)
+    webm = models.Video.query.get(2).get_webm()
+    mp4 = models.Video.query.get(2).get_mp4()
+    return jsonify(webm=webm,mp4=mp4)
 
 if __name__ == '__main__':
     app.run(debug=True)
