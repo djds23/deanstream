@@ -25,11 +25,16 @@ def contact():
 
 @app.route('/_new_video')
 def new_video():
-    current_video = request.args.get('current_video')
-    asset = models.Video.query.order_by('?').limit(1)
-    webm = models.Video.query.get(2).get_webm()
-    mp4 = models.Video.query.get(2).get_mp4()
-    return jsonify(webm=webm,mp4=mp4)
+    current_mp4 = request.args.get('current_mp4')
+    current_webm = request.args.get('current_webm')
+    while True:
+        video_id = random.randrange(1,models.Video.query.count() + 1) # adds one to the limit so that it raises above 1
+        new_video = models.Video.query.get(video_id)
+        test_case = str(new_video)
+        if current_mp4.split('/')[-1] in test_case and current_webm.split('/')[-1]:
+            webm = new_video.get_webm()
+            mp4 = new_video.get_mp4()
+            return jsonify(webm=webm,mp4=mp4)
 
 if __name__ == '__main__':
     app.run(debug=True)
