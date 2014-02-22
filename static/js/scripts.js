@@ -5,9 +5,12 @@ $(function() {
       { current_video: $('video').attr('src') },
       function(data) {
         var webm_path = $SCRIPT_ROOT+"static/"+data.webm;
-        $('#webm').attr('src', webm_path);
         var mp4_path = $SCRIPT_ROOT+"static/"+data.mp4;
-        $('#mp4').attr('src', mp4_path);
+        var poster_path = $SCRIPT_ROOT+"static/img/mobile.jpg";
+        $(".insert-video").append('<video autoplay="" loop="" poster="' + poster_path +'">\
+                                  <source type="video/webm" src="'+ webm_path +'">\
+                                  <source type="video/mp4" src="'+ mp4_path +'">\
+                                  </video></br>');
       });
   }
   $("a#new_video").bind('click', video);
