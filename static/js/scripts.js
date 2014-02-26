@@ -1,5 +1,8 @@
-$("p#watch-dean-text").click(function() {
-  $(this).html("Another!")
+$(document).ready(function() {
+  $('div.watch-dean p').on('click', function() {
+    $(this).removeClass('watch-dean-text').addClass('watch-dean-after-click');
+    $(this).text('Another!');
+  });
 });
 
 $(function() {

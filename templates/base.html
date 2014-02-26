@@ -8,8 +8,9 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../static/img/favicon.ico">
 
-    <title>DeanStream 0.09</title> 
+    <title>DeanStream 0.09</title>
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.storageapi.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     <script type="text/javascript">
       $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
