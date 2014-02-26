@@ -1,5 +1,16 @@
 this branch will replace the master eventually!
 
+update! there is a light!
+
+So here is the deal,
+use local memory to store the primary id from the video
+check that id before we write the html.
+
+the jquery needs to be entirely redone for this.
+but it seems like the right thing todo.
+avoid the while loop.
+another excuse to write javascript!
+
 Now with 0.1 less SQLALCHEMY! here comes the database mess! make sure
 to use sqlalchemy 0.7.10! there is an error with .8!
 
