@@ -25,7 +25,7 @@ def contact():
 def new_video():
     current_id = request.args.get('current_id')
     while True:
-        video_id = random.randrange(1,models.Video.query.count() + 1) # adds one to the limit so that it raises above 1
+        video_id = random.randrange(1,models.Video.query.count() + 1) #the +1 is to acomadate for the fact that the db starts at 1 and count is non inclusive of the highest value 
         if video_id != current_id:
             new_video = models.Video.query.get(video_id)
             webm = new_video.get_webm()
