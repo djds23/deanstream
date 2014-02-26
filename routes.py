@@ -10,6 +10,7 @@ config = app.config.from_object('config')
 @app.route('/')
 def home():
     '''creates the dict with the filepaths, and returns the template'''
+    new_video()
     return render_template('index.html')
 
 @app.route('/about')

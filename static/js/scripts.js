@@ -1,3 +1,7 @@
+$("p#watch-dean-text").click(function() {
+  $(this).html("Another!")
+});
+
 $(function() {
   var video = function(e) {
     $.getJSON(
