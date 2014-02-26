@@ -20,9 +20,8 @@ def contact():
 @app.route('/_new_video')
 def new_video():
     current_id = request.args.get('current_id')
-    print current_id
+    video_id = random.randrange(1,models.Video.query.count() + 1) #the +1 is to acomadate for the fact that the db starts at 1 and count is non inclusive of the highest value 
     while True:
-        video_id = random.randrange(1,models.Video.query.count() + 1) #the +1 is to acomadate for the fact that the db starts at 1 and count is non inclusive of the highest value 
         if video_id != current_id:
             new_video = models.Video.query.get(video_id)
             webm = new_video.get_webm()
