@@ -3,13 +3,15 @@ This is DeanStream! come here to watch different 'streams' of Dean sleeping!
 
 This project is primarially built on Python 2.7, Flask, SQLAlchemy, jQuery and a bit of Twitter Bootstrap
 
+##[Watch Deanstream here!](http://test.deanstream.com/)
+
 Now with 0.1 less SQLALCHEMY! here comes the database mess! make sure
 to use sqlalchemy 0.7.10! there is an error with .8!
 
 Be aware the "requirements.txt" file is rather bloated, but you do need gunicorn, sqlalchemy, flask-sqlalchemy, whooshalcmey, sqlalchemy-migrate and sqlite3 to update the database.
 
 All of these dependencies can be installed using pip and run in a virtualenv.
-Don't have pip? instructions here: http://www.pip-installer.org/en/latest/
+Don't have pip? instructions here: [pip!](http://www.pip-installer.org/en/latest/)
 
 Then:
 ```bash
