@@ -15,4 +15,4 @@ class Video(db.Model):
         return str(self.webmpath)
 
     def __repr__(self):
-        return '<Video {0},{1},{2}>'.format(self.id, self.mp4path, self.webmpath)
+        return '{0}'.format(get_id)
