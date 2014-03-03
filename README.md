@@ -3,7 +3,7 @@ This is DeanStream! come here to watch different 'streams' of Dean sleeping!
 
 This project is primarially built on Python 2.7, Flask, SQLAlchemy, jQuery and a bit of Twitter Bootstrap
 
-##[Watch Deanstream here!](http://test.deanstream.com/)
+##[Watch Deanstream here!](http://deanstream.com/)
 
 Now with 0.1 less SQLALCHEMY! here comes the database mess! make sure
 to use sqlalchemy 0.7.10! there is an error with .8!
