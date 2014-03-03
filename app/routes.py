@@ -28,5 +28,4 @@ def new_video():
     new_video = models.Video.query.get(video_id)
     webm = new_video.get_webm()
     mp4 = new_video.get_mp4()
-    print video_id
     return jsonify(webm=webm,mp4=mp4,video_id=video_id)
