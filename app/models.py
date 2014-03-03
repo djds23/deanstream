@@ -6,7 +6,7 @@ class Video(db.Model):
     webmpath = db.Column(db.String(500), index = True)
 
     def get_id(self):
-        return int(self.id)
+        return str(self.id)
 
     def get_mp4(self):
         return str(self.mp4path)
@@ -15,4 +15,4 @@ class Video(db.Model):
         return str(self.webmpath)
 
     def __repr__(self):
-        return '{0}'.format(get_id)
+        return '{0}'.format(self.id)
