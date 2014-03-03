@@ -21,9 +21,8 @@ def contact():
 @app.route('/_new_video')
 def new_video():
     current_id = request.args.get('current_id')
-    videos = models.Video.query.all()
-    pool = [video for video in videos if video != current_id]
-    print type(random.choice(pool))
+    videos = random.choice(models.Video.query.all())
+    print type(videos)
     #new_video = models.Video.query.get(random.choice(pool))
     #webm = new_video.get_webm()
     #mp4 = new_video.get_mp4()
