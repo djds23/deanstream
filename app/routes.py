@@ -1,15 +1,18 @@
-from flask import Flask, render_template, jsonify, request, g, url_for
+from flask import Flask, render_template, jsonify, request, g, url_for, session
 from app import app
 from randomizer import gen_random_video
 import models
 
 
-videos = [_ for _ in range(models.Video.query.count()+1) if models.Video.query.get(_) != None ]
+videos = [i for i in range(models.Video.query.count()+1) if models.Video.query.get(i) != None ]
 recently_watched_generator = gen_random_video(videos)
+
 
 @app.route('/')
 def home():
     '''creates the dict with the filepaths, and returns the template'''
+    if session.new:    
+        app.open_session(request)    
     new_video()
     return render_template('index.html')
 
