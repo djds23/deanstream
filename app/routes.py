@@ -1,12 +1,7 @@
 from flask import Flask, render_template, jsonify, request, g, url_for, session
 from app import app
-from randomizer import gen_random_video
+from randomizer import Randomizer
 import models
-
-
-videos = [i for i in range(models.Video.query.count()+1) if models.Video.query.get(i) != None ]
-recently_watched_generator = gen_random_video(videos)
-
 
 @app.route('/')
 def home():
@@ -27,7 +22,7 @@ def contact():
 @app.route('/_new_video')
 def new_video():
     current_id = request.args.get('current_id')
-    video_id = next(recently_watched_generator)
+    video_id = next(Randomizer().gen_random_video())
     new_video = models.Video.query.get(video_id)
     webm = new_video.get_webm()
     mp4 = new_video.get_mp4()
