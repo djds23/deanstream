@@ -3,18 +3,13 @@ $(document).ready(function() {
     $(this).removeClass('watch-dean-text').addClass('watch-dean-after-click');
     $(this).text('Another!');
   });
-  storage=$.localStorage;
 });
 
 $(function() {
   var video = function(e) {
     $.getJSON(
       $SCRIPT_ROOT +'/_new_video',
-      {
-        current_id: storage.get('video_id')
-      },
       function(data) {
-        storage.set('video_id',data.video_id);
         var webm_path = $SCRIPT_ROOT+"static/"+data.webm;
         var mp4_path = $SCRIPT_ROOT+"static/"+data.mp4;
         var poster_path = $SCRIPT_ROOT+"static/img/mobile.jpg";
