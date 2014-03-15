@@ -1,13 +1,11 @@
-from flask import Flask, render_template, jsonify, request, g, url_for, session
+from flask import Flask, render_template, jsonify, session
 from app import app
-from randomizer import Randomizer
+import random
 import models
 
 @app.route('/')
 def home():
     '''creates the dict with the filepaths, and returns the template'''
-    if session.new:    
-        app.open_session(request)    
     new_video()
     return render_template('index.html')
 
@@ -21,9 +19,13 @@ def contact():
 
 @app.route('/_new_video')
 def new_video():
-    current_id = request.args.get('current_id')
-    video_id = next(Randomizer().gen_random_video())
-    new_video = models.Video.query.get(video_id)
+    video_list = session.get('video_list', None)
+    if not video_list:
+        video_list = [video.id for video in models.Video.query.all()]
+        random.shuffle(video_list)
+    current_id = video_list.pop(0)
+    session['video_list'] = video_list
+    new_video = models.Video.query.get(current_id)
     webm = new_video.get_webm()
     mp4 = new_video.get_mp4()
-    return jsonify(webm=webm,mp4=mp4,video_id=video_id)
+    return jsonify(webm=webm,mp4=mp4)
