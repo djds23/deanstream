@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, session
 from app import app
 import random
-import models
+from . import models
 
 @app.route('/')
 def home():
